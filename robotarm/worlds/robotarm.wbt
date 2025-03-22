@@ -1,0 +1,340 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/Robotiq2f140Gripper.proto"
+EXTERNPROTO "../protos/Sojourner.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.3132552866326666 -0.20827161686723694 -0.9265495448189444 4.245826387167214
+  position 0.8063024506442968 -1.8425822829825393 1.4242116868064043
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+}
+DEF SOJOURNER_ROBOT Robot {
+  children [
+    Receiver {
+    }
+    Emitter {
+    }
+    DEF Right DistanceSensor {
+      translation 0 -0.44 0.25
+      name "right_dist"
+    }
+    DEF Front DistanceSensor {
+      translation -0.4 -0.58 0.25
+      name "front_dist"
+    }
+    DEF Back DistanceSensor {
+      translation 0.21 -0.58 0.25
+      name "back_dist"
+    }
+    DEF Left DistanceSensor {
+      translation 0 -0.73 0.25
+      name "Left_dist"
+    }
+    DEF Robot_arm Robot {
+      translation -0.11 -0.57 0.33
+      rotation 1 0 0 4.692820414042842e-06
+      children [
+        Accelerometer {
+        }
+        DEF joint2 HingeJoint {
+          jointParameters HingeJointParameters {
+            position 51.40030072074667
+            axis 0 0 1
+          }
+          device [
+            PositionSensor {
+              name "pos1"
+            }
+            RotationalMotor {
+              name "motor1"
+            }
+          ]
+          endPoint Solid {
+            translation -0.13780712356324504 0.019852624391361064 0.019999999999999567
+            rotation 0.7428123363963944 0.473408639199497 0.4734069002756616 1.8638259478096204
+            children [
+              Pose {
+                translation 0.085 0.0865 0.0474
+                rotation 0.577349935856137 -0.5773509358560258 0.577349935856137 -2.0943853071795866
+                children [
+                  DEF Joint3 HingeJoint {
+                    jointParameters HingeJointParameters {
+                      position 24.578011757806884
+                      axis 0 1 0
+                      maxStop 26.2
+                    }
+                    device [
+                      RotationalMotor {
+                        name "motor2"
+                      }
+                      PositionSensor {
+                        name "pos2"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.20692588560788536 -0.08199999999999916 -0.03457467086454371
+                      rotation 0.9997577862522034 -0.01556005517659965 0.015564495205272916 1.5710372839219948
+                      children [
+                        SliderJoint {
+                          jointParameters JointParameters {
+                            position 0.20017658220985707
+                            axis -1 0 0
+                            maxStop 1
+                          }
+                          device [
+                            LinearMotor {
+                              name "linear_motor"
+                            }
+                            PositionSensor {
+                              name "pos_linear"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation -0.330176582209857 0.011 -0.0143
+                            children [
+                              Pose {
+                                translation -0.589 0.051 0.05
+                                rotation 0 0 1 0.261799
+                                children [
+                                  DEF Joint4 HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis 0 0 1
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "motor3"
+                                      }
+                                      PositionSensor {
+                                        name "pos3"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation -0.53 -0.0227 -1.3487
+                                      children [
+                                        Pose {
+                                          translation 0.93 0.06 1.288
+                                          rotation 0 0 1 1.309
+                                          children [
+                                            HingeJoint {
+                                              jointParameters HingeJointParameters {
+                                                position 3.8257902805581375e-05
+                                                axis 0 0 1
+                                              }
+                                              device [
+                                                RotationalMotor {
+                                                  name "motor4"
+                                                }
+                                                PositionSensor {
+                                                  name "pos4"
+                                                }
+                                              ]
+                                              endPoint Solid {
+                                                translation 0.6860001700613713 0.03006881513970385 -1.2536021913521516
+                                                rotation -2.574139029391241e-07 -1.4317044775848087e-05 -0.9999999998974781 3.141565912722057
+                                                children [
+                                                  Pose {
+                                                    translation 0.535 0.0292 1.2859
+                                                    rotation -9.58979e-09 1 9.5898e-09 -1.5707953071795862
+                                                    children [
+                                                      DEF Joint6 HingeJoint {
+                                                        jointParameters HingeJointParameters {
+                                                          position -1.5823694481286872e-06
+                                                        }
+                                                        device [
+                                                          PositionSensor {
+                                                            name "pos5"
+                                                          }
+                                                          RotationalMotor {
+                                                            name "motor5"
+                                                          }
+                                                        ]
+                                                        endPoint Robotiq2f140Gripper {
+                                                          hidden position_0_0 3.630465677460701e-08
+                                                          hidden position_0_1 -3.7652647728592115e-06
+                                                          hidden position_0_2 -3.866303006258825e-08
+                                                          hidden position_0_3 4.876393340130387e-06
+                                                          hidden translation_1 0 -0.030601 0.054905
+                                                          hidden rotation_1 1 0 0 2.2957959636953427
+                                                          hidden position_2_0 -0.00013559824483585424
+                                                          hidden translation_3 0 0.081755 -0.02822
+                                                          hidden rotation_3 -1 0 0 0.7251355982448353
+                                                          hidden translation_5 0 -0.0127 0.06142
+                                                          hidden rotation_5 0.9999999999999999 0 0 2.2957922347352273
+                                                          hidden position_5_0 -0.0001318692845915237
+                                                          hidden translation_6 0 0.030601 0.054905
+                                                          hidden rotation_6 3.3483170581283542e-15 0.9119033063842489 0.41040511669017316 3.141593
+                                                          hidden position_7_0 0.0001297816549197839
+                                                          hidden translation_8 0 0.08175500259563309 -0.028219999999831567
+                                                          hidden rotation_8 -1 0 0 0.7248702183450798
+                                                          hidden translation_10 0 0.0127 0.06142
+                                                          hidden rotation_10 4.2230810612633934e-13 -0.9119042990962175 -0.41040291091784 3.141593
+                                                          hidden position_10_0 0.00012494392443406174
+                                                          rotation -1 0 0 1.5823321285794533e-06
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                  CadShape {
+                                                    url [
+                                                      "joint_5.obj"
+                                                    ]
+                                                  }
+                                                ]
+                                                physics Physics {
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                        CadShape {
+                                          url [
+                                            "joint_4.obj"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                              CadShape {
+                                url [
+                                  "joint_3_2.obj"
+                                ]
+                              }
+                            ]
+                            boundingObject Mesh {
+                              url [
+                                "joint_3_2.obj"
+                              ]
+                            }
+                            physics Physics {
+                            }
+                          }
+                        }
+                        DEF JOint3 CadShape {
+                          url [
+                            "joint_3_1.obj"
+                          ]
+                        }
+                      ]
+                      name "solid(2)"
+                      boundingObject Mesh {
+                        url [
+                          "joint_3_1.obj"
+                        ]
+                      }
+                      physics Physics {
+                      }
+                    }
+                  }
+                ]
+              }
+              CadShape {
+                url [
+                  "joint_2 18.14.42.obj"
+                ]
+              }
+            ]
+            name "solid(1)"
+            boundingObject Mesh {
+              url [
+                "joint_2 18.14.42.obj"
+              ]
+            }
+            physics Physics {
+            }
+          }
+        }
+        DEF Base Solid {
+          translation -0.4600000000000001 1.2999999998731109 -6.73029879569298e-05
+          rotation 1 -1.9773272175996836e-24 2.0295107959624403e-24 1.570800000000001
+          children [
+            CadShape {
+              url [
+                "joint_1 18.14.42.obj"
+              ]
+            }
+          ]
+          boundingObject Mesh {
+            url [
+              "joint_1 18.14.42.obj"
+            ]
+          }
+          physics Physics {
+          }
+        }
+      ]
+      controller "my_controller"
+    }
+    Sojourner {
+      hidden position_0_0 -1.2748342860134034e-06
+      hidden position_0_1 -7.407512602714396e-07
+      hidden position_0_2 -1.2737820874191565e-06
+      hidden position_0_3 -7.407512656598669e-07
+      hidden translation_1 -0.108 -0.2 0.015
+      hidden rotation_1 0.9975051166701937 0.04991764325767038 -0.04991764325750424 1.5732940636363186
+      hidden position_1_0 0.0427529119595307
+      hidden translation_2 0.175 -0.098 -0.023
+      hidden rotation_2 0 0 1 0.04275291195953256
+      hidden position_2_0 7.048307994995095e-07
+      hidden position_2_1 7.372446173739226e-13
+      hidden translation_3 0.155 0.011 0.02
+      hidden rotation_3 0 1 0 7.046216975174516e-07
+      hidden position_3_0 2.040504854283016e-07
+      hidden translation_4 0.025 -0.078 0
+      hidden rotation_4 0 0 -1 2.043144285798385e-07
+      hidden translation_5 -0.087 -0.078 0.02
+      hidden translation_6 -0.108 -0.2 0.015
+      hidden rotation_6 0.9975051432638615 -0.04991737754606466 0.04991737754596812 1.5732940369762238
+      hidden position_6_0 6.703424958245859e-08
+      hidden translation_7 -0.15 -0.098 -0.005
+      hidden rotation_7 0 1 0 6.664001874625056e-08
+      hidden position_7_0 -2.1316282072803006e-14
+      hidden translation_8 0 -0.078 0
+      hidden translation_9 -0.108 0.2 0.015
+      hidden rotation_9 0.9975051167225859 0.04991764273419119 -0.049917642734025186 1.5732940635837955
+      hidden position_9_0 0.048415811507355605
+      hidden translation_10 0.175 -0.098 0.023
+      hidden rotation_10 0 0 1 0.04841581150735836
+      hidden position_10_0 -7.113986856419908e-07
+      hidden position_10_1 -3.375077994860476e-14
+      hidden translation_11 0.155 0.011 -0.02
+      hidden rotation_11 0 -1 0 7.115206948705545e-07
+      hidden position_11_0 2.0495750453158843e-07
+      hidden translation_12 0.025 -0.079 0
+      hidden rotation_12 0 0 -0.9999999999999999 2.043144285798385e-07
+      hidden translation_13 -0.087 -0.078 -0.017
+      hidden translation_14 -0.108 0.2 0.015
+      hidden rotation_14 0.9975051432638612 -0.049917377546067336 0.049917377545970816 1.573294036976224
+      hidden position_14_0 -6.703435850852202e-08
+      hidden translation_15 -0.15 -0.098 0.005
+      hidden rotation_15 0 -1 0 6.664001874625056e-08
+      hidden position_15_0 -7.993605777301127e-15
+      hidden translation_16 0 -0.078 0
+      translation -3.206137299828493e-05 -0.5800000042361307 0.23654004509671697
+      rotation 0.01883797185502874 0.9998189899433877 0.0026679889379665114 3.6833682169184066e-06
+    }
+  ]
+  name "robot(1)"
+  controller "sojourner_controller"
+}
+DEF Supervisor Robot {
+  children [
+    Receiver {
+    }
+    Emitter {
+    }
+  ]
+  controller "sojourner_robot_controller"
+}

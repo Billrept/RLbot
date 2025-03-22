@@ -1,0 +1,10 @@
+*.obj filter=lfs diff=lfs merge=lfs -text
+joint_1[[:space:]]18.14.42.obj filter=lfs diff=lfs merge=lfs -text
+joint_2[[:space:]]18.14.42.obj filter=lfs diff=lfs merge=lfs -text
+joint_3[[:space:]]18.14.42.obj filter=lfs diff=lfs merge=lfs -text
+joint_3_1.obj filter=lfs diff=lfs merge=lfs -text
+joint_3_2.obj filter=lfs diff=lfs merge=lfs -text
+joint_4.obj filter=lfs diff=lfs merge=lfs -text
+joint_5.obj filter=lfs diff=lfs merge=lfs -text
+robotarm/worlds/joint_3*.obj filter=lfs diff=lfs merge=lfs -text
+robotarm/worlds/joint_?*.obj filter=lfs diff=lfs merge=lfs -text
